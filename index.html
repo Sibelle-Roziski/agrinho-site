@@ -1,5 +1,7 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,6 +20,7 @@
     body{
       background:#f4f7f2;
       color:#333;
+      scroll-behavior:smooth;
     }
 
     header{
@@ -25,6 +28,8 @@
       color:white;
       padding:20px;
       text-align:center;
+      position:sticky;
+      top:0;
     }
 
     nav{
@@ -36,11 +41,18 @@
       text-decoration:none;
       margin:0 15px;
       font-weight:bold;
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      color:#c5e1a5;
     }
 
     .hero{
-      height:80vh;
-      background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+      height:85vh;
+
+      background:
+      linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
       url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?q=80&w=1200&auto=format&fit=crop');
 
       background-size:cover;
@@ -63,6 +75,7 @@
     .hero p{
       font-size:1.2rem;
       max-width:700px;
+      margin:auto;
     }
 
     .btn{
@@ -74,9 +87,101 @@
       text-decoration:none;
       border-radius:8px;
       font-weight:bold;
+      transition:0.3s;
+    }
+
+    .btn:hover{
+      background:#689f38;
+    }
+
+    section{
+      padding:70px 10%;
+    }
+
+    .titulo{
+      text-align:center;
+      color:#2e7d32;
+      margin-bottom:40px;
+      font-size:2rem;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:25px;
+    }
+
+    .card{
+      background:white;
+      padding:25px;
+      border-radius:15px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-5px);
+    }
+
+    .card h3{
+      color:#2e7d32;
+      margin-bottom:10px;
+    }
+
+    .quiz{
+      background:#e8f5e9;
+      padding:40px;
+      border-radius:15px;
+      text-align:center;
+    }
+
+    .quiz button{
+      padding:10px 20px;
+      border:none;
+      border-radius:8px;
+      cursor:pointer;
+      color:white;
+      font-weight:bold;
+      margin:10px;
+      transition:0.3s;
+    }
+
+    .sim{
+      background:#2e7d32;
+    }
+
+    .nao{
+      background:#c62828;
+    }
+
+    #resultado{
+      margin-top:20px;
+      font-weight:bold;
+      font-size:1.1rem;
+    }
+
+    footer{
+      background:#2e7d32;
+      color:white;
+      text-align:center;
+      padding:20px;
+    }
+
+    @media(max-width:768px){
+
+      .hero h1{
+        font-size:2rem;
+      }
+
+      nav a{
+        display:block;
+        margin:10px 0;
+      }
+
     }
 
   </style>
+
 </head>
 
 <body>
@@ -86,15 +191,15 @@
     <h1>AgroConsciente</h1>
 
     <nav>
-      <a href="#">Início</a>
-      <a href="#">Problemas</a>
-      <a href="#">Cuidados</a>
-      <a href="#">Quiz</a>
+      <a href="#inicio">Início</a>
+      <a href="#problemas">Problemas</a>
+      <a href="#cuidados">Cuidados</a>
+      <a href="#quiz">Quiz</a>
     </nav>
 
   </header>
 
-  <section class="hero">
+  <section class="hero" id="inicio">
 
     <div>
 
@@ -103,86 +208,157 @@
       </h1>
 
       <p>
-        A tecnologia pode ajudar na conscientização sobre os riscos causados pelo uso incorreto de defensivos agrícolas.
+        A tecnologia pode ajudar na conscientização sobre os riscos causados pelo uso incorreto de defensivos agrícolas, protegendo a saúde das pessoas e o meio ambiente.
       </p>
 
-      <a href="#" class="btn">
+      <a href="#problemas" class="btn">
         Saiba Mais
       </a>
 
     </div>
-<section style="padding:70px 10%;">
 
-  <h2 style="
-  text-align:center;
-  color:#2e7d32;
-  margin-bottom:40px;
-  font-size:2rem;
-  ">
-    Problemas causados
-  </h2>
-
-  <div style="
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
-  ">
-
-    <div style="
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.1);
-    ">
-
-      <h3 style="color:#2e7d32;">
-        Saúde humana
-      </h3>
-
-      <p>
-        O uso incorreto dos defensivos agrícolas pode causar intoxicações e prejudicar a saúde dos trabalhadores rurais.
-      </p>
-
-    </div>
-
-    <div style="
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.1);
-    ">
-
-      <h3 style="color:#2e7d32;">
-        Contaminação da água
-      </h3>
-
-      <p>
-        Produtos químicos podem atingir rios e prejudicar o meio ambiente.
-      </p>
-
-    </div>
-
-    <div style="
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.1);
-    ">
-
-      <h3 style="color:#2e7d32;">
-        Poluição do solo
-      </h3>
-
-      <p>
-        O excesso de produtos químicos afeta a qualidade do solo e das plantações.
-      </p>
-
-    </div>
-
-  </div>
-
-</section>
   </section>
 
+  <section id="problemas">
+
+    <h2 class="titulo">
+      Problemas causados
+    </h2>
+
+    <div class="cards">
+
+      <div class="card">
+
+        <h3>Saúde humana</h3>
+
+        <p>
+          O uso incorreto dos defensivos agrícolas pode causar intoxicações e prejudicar a saúde dos trabalhadores rurais.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>Contaminação da água</h3>
+
+        <p>
+          Produtos químicos podem atingir rios e prejudicar o meio ambiente.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>Poluição do solo</h3>
+
+        <p>
+          O excesso de produtos químicos afeta a qualidade do solo e das plantações.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="cuidados" style="background:#e8f5e9;">
+
+    <h2 class="titulo">
+      Cuidados importantes
+    </h2>
+
+    <div class="cards">
+
+      <div class="card">
+
+        <h3>Equipamentos de proteção</h3>
+
+        <p>
+          O uso de máscaras, luvas e roupas adequadas ajuda a proteger os trabalhadores rurais.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>Aplicação correta</h3>
+
+        <p>
+          Aplicar os defensivos corretamente reduz os impactos no meio ambiente.
+        </p>
+
+      </div>
+
+      <div class="card">
+
+        <h3>Orientação técnica</h3>
+
+        <p>
+          Seguir recomendações corretas evita desperdícios e reduz riscos à saúde.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <section id="quiz">
+
+    <h2 class="titulo">
+      Quiz Interativo
+    </h2>
+
+    <div class="quiz">
+
+      <h3>
+        O uso de equipamentos de proteção é importante durante a aplicação dos defensivos agrícolas?
+      </h3>
+
+      <br>
+
+      <button class="sim" onclick="correta()">
+        Sim
+      </button>
+
+      <button class="nao" onclick="errada()">
+        Não
+      </button>
+
+      <p id="resultado"></p>
+
+    </div>
+
+  </section>
+
+  <footer>
+
+    <p>
+      Projeto desenvolvido para o Agrinho 2026 - Desenvolvimento Front-End
+    </p>
+
+  </footer>
+
+  <script>
+
+    function correta(){
+
+      document.getElementById('resultado').innerHTML =
+      '✅ Correto! Os equipamentos de proteção ajudam a preservar a saúde dos trabalhadores rurais.';
+
+    }
+
+    function errada(){
+
+      document.getElementById('resultado').innerHTML =
+      '❌ Incorreto! Os equipamentos de proteção são essenciais para evitar riscos à saúde.';
+
+    }
+
+  </script>
+
 </body>
+
 </html>
+```
+
